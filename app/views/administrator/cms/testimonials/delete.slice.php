@@ -28,34 +28,34 @@ Testimonials
                 <div class="form-group row ">
                     <div class="col-lg-6">
                         <label >Id</label>
-                        <input type="text" class="form-control {{error_form_class('id')}}" value="{{$survey['id'] ?? '-'}}" name="id" placeholder="ID">
+                        <input type="text" class="form-control {{error_form_class('id')}}" value="" name="id" placeholder="ID">
                         <div class="error text-danger">{{error_form('nama') ?? ''}}</div>
                     </div>
                     <div class="col-lg-6">
                         <label >Nama</label>
-                        <input type="text" class="form-control {{error_form_class('nama')}}" value="{{$result['name'] ?? ''}}" name="nama" placeholder="Nama">
+                        <input type="text" class="form-control {{error_form_class('nama')}}" value="" name="nama" placeholder="Nama">
                         <div class="error text-danger">{{error_form('nama') ?? ''}}</div>
                     </div>
                     <div class="col-lg-6">
                         <label >Umur</label>
-                        <input type="number" class="form-control {{error_form_class('age')}}" value="{{$result['age'] ?? ''}}" name="age" placeholder="Umur">
+                        <input type="number" class="form-control {{error_form_class('age')}}" value="" name="age" placeholder="Umur">
                         <div class="error text-danger">{{error_form('age') ?? ''}}</div>
                     </div>
                 </div>
                 <div class="form-group row ">
                     <div class="col-lg-6">
                         <label >Deskripsi</label>
-                        <input type="text" class="form-control {{error_form_class('description')}}" value="{{$result['description'] ?? ''}}" name="description" placeholder="Deskripsi">
+                        <input type="text" class="form-control {{error_form_class('description')}}" value="" name="description" placeholder="Deskripsi">
                         <div class="error text-danger">{{error_form('description') ?? ''}}</div>
                     </div>
                     <div class="col-lg-6">
                         <label >Alamat</label>
-                        <input type="text" class="form-control {{error_form_class('address')}}" value="{{$result['address'] ?? ''}}" name="address" placeholder="Alamat">
+                        <input type="text" class="form-control {{error_form_class('address')}}" value="" name="address" placeholder="Alamat">
                         <div class="error text-danger">{{error_form('address') ?? ''}}</div>
                     </div>
                     <div class="col-lg-6">
                         <label >Tanggal Survey</label>
-                        <input type="date" class="form-control {{error_form_class('datetime')}}" value="{{$result['datetime'] ?? ''}}" name="datetime" placeholder="Tanggal Survey">
+                        <input type="date" class="form-control {{error_form_class('datetime')}}" value="" name="datetime" placeholder="Tanggal Survey">
                         <div class="error text-danger">{{error_form('datetime') ?? ''}}</div>
                     </div>
                     <div class="col-lg-6">

@@ -56,23 +56,25 @@ class Testimonials extends PrivateBase {
         $this->form_validation->set_rules('image','Foto Profile','trim|required');
         // process
         if ($this->form_validation->run() !== FALSE) {
-            $upload_image = $this->input->post('image');
-            $data['image'] = 'default.jpg';
-            if ($upload_image) {
-                $config['allowed_types'] = 'gif|jpg|png|jpeg';
-                $config['max_size'] = '2048';
-                $config['upload_path'] = '/template/landing/images/testimonial/profile/';
+                $uploaded_data = "";
+                $config['upload_path']          = './template/landing/images/testimonial/profile/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['file_name']            = 'default_profile';
+                $config['max_size']             = 1000;
+                $config['max_width']            = 1024;
+                $config['max_height']           = 768;
 
                 $this->load->library('upload', $config);
 
-                if ($this->upload->do_upload('image')) {
-                    $new_image = $this->upload->data('file_name');
-                    $data['image'] = $new_image;
-                } else {
-                    echo $this->upload->display_errors();
+                if ( ! $this->upload->do_upload('image'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
                 }
-            }
-
+                else
+                {
+                    $uploaded_data = $this->upload->data();
+                }
+                    
                 // update params
                 $params = array(
                     'name' => $this->input->post('name',TRUE), 
@@ -80,7 +82,7 @@ class Testimonials extends PrivateBase {
                     'description' => $this->input->post('description', TRUE), 
                     'address' => $this->input->post('address',TRUE), 
                     'datetime' => $this->input->post('datetime',TRUE), 
-                    'image' => $this->$data['image'], 
+                    'image' => $uploaded_data['file_name'], 
                     'mdb' => $this->com_user('user_id'),
                     'mdb_name' => $this->com_user('user_name'),
                     'mdd' => now(),
@@ -167,7 +169,20 @@ class Testimonials extends PrivateBase {
         $data = array(
             'result' => $this->M_testimonial->get_survey_by_id($survey_id),
         );
-        view(self::PAGE_URL . 'delete', $data);
+
+        $where = array(
+            'id' => $survey_id,
+        );
+
+        //process
+        if ($this->M_testimonial->delete('testimoni', $where)) {
+            //sukses notif
+            $this->notification->send(self::PAGE_URL, 'success', 'Data successfully deleted');
+        } else {
+            //default error
+            $this->notification->send(self::PAGE_URL, 'error', 'Data failed to delete !');
+        }
+        // view(self::PAGE_URL . 'delete', $data);
     }
 
     public function delete_survey() {
@@ -181,7 +196,7 @@ class Testimonials extends PrivateBase {
             'id' => $survey_id,
         );
         //process
-        if ($this->M_users->delete('testimoni', $where)) {
+        if ($this->M_testimonial->delete('testimoni', $where)) {
             //sukses notif
             $this->notification->send(self::PAGE_URL, 'success', 'Data successfully deleted');
         } else {
