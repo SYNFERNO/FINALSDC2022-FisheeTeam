@@ -28,7 +28,7 @@ Dashboard
                         <div class="col col-stats ml-3 ml-sm-0">
                             <div class="numbers">
                                 <p class="card-category">Suhu</p>
-                                <h4 class="card-title">{{$total_users}} C</h4>
+                                <h4 class="card-title">{{$suhu}} C</h4>
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@ Dashboard
                         <div class="col col-stats ml-3 ml-sm-0">
                             <div class="numbers">
                                 <p class="card-category">pH</p>
-                                <h4 class="card-title">{{$total_materi}}</h4>
+                                <h4 class="card-title">{{$ph}}</h4>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ Dashboard
                         <div class="col col-stats ml-3 ml-sm-0">
                             <div class="numbers">
                                 <p class="card-category">Ketinggian Air</p>
-                                <h4 class="card-title">{{$total_konsultasi}} CM</h4>
+                                <h4 class="card-title">{{$ketinggian}} CM</h4>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@ Dashboard
                         <div class="col col-stats ml-3 ml-sm-0">
                             <div class="numbers">
                                 <p class="card-category">Perkiraan Cuaca</p>
-                                <h4 class="card-title">Jam 13.00 - Cerah</h4>
+                                <h4 class="card-title">Jam {{$jam}} - Cerah</h4>
                             </div>
                         </div>
                     </div>

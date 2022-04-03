@@ -2,66 +2,40 @@
 
 class M_dashboard extends MY_Model {
 
-    public function get_total_materi()
+    public function get_latest_suhu()
     {
-        $sql = "SELECT COUNT(*) as 'total' FROM materi";
+        $sql = "SELECT * FROM sensor_suhu WHERE id IN (SELECT MAX(id) FROM sensor_suhu)";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->row_array();
             $query->free_result();
-            return $result['total'];
+            return $result['celcius'];
         }
         return 0;
     }
 
-    public function get_total_kehamilan()
+    public function get_latest_ph()
     {
-        $sql = "SELECT COUNT(*) as 'total' FROM kehamilan";
+        $sql = "SELECT * FROM sensor_ph WHERE id IN (SELECT MAX(id) FROM sensor_ph)";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->row_array();
             $query->free_result();
-            return $result['total'];
+            return $result['ph'];
         }
         return 0;
     }
-    public function get_total_konsultasi()
+
+    public function get_latest_ketinggian()
     {
-        $sql = "SELECT COUNT(*) as 'total' FROM konsultasi";
+        $sql = "SELECT * FROM sensor_ketinggian WHERE id IN (SELECT MAX(id) FROM sensor_ketinggian)";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->row_array();
             $query->free_result();
-            return $result['total'];
+            return $result['ketinggian'];
         }
         return 0;
-    }
-
-
-    public function get_total_users()
-    {
-        $sql = "SELECT COUNT(*) as 'total' from user a 
-        JOIN com_role_user b ON a.user_id = b.user_id 
-        WHERE b.role_id = '2004'";
-        $query = $this->db->query($sql);
-        if ($query->num_rows() > 0) {
-            $result = $query->row_array();
-            $query->free_result();
-            return $result['total'];
-        }
-        return 0;
-    }
-
-    public function get_last_order()
-    {
-        $sql = "SELECT COUNT(*) as 'total' FROM course";
-        $query = $this->db->query($sql);
-        if ($query->num_rows() > 0) {
-            $result = $query->result_array();
-            $query->free_result();
-            return $result;
-        }
-        return array();
     }
 
 }
