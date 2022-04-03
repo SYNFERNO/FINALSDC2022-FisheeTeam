@@ -62,8 +62,8 @@ class Sensor extends RestController {
         ];
 
         $insert = $this->Device->insert('sensor_suhu', $dataSuhu);
-        $insert = $this->Device->insert('sensor_suhu', $datapH);
-        $insert = $this->Device->insert('sensor_suhu', $dataKetinggian);
+        $insert = $this->Device->insert('sensor_ph', $datapH);
+        $insert = $this->Device->insert('sensor_ketinggian', $dataKetinggian);
 
         if($insert){
             $result = array(
