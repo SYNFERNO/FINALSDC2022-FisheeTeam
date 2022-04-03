@@ -1,11 +1,11 @@
 <?php
 
-class M_device extends CI_Model {
+class M_device extends MY_Model {
 
     public function get_all() {
-        $this->db->select('*');
-        $this->db->from('data_feeder');
-        $query = $this->db->get();
+        $sql = "SELECT * FROM sensor_suhu
+        LIMIT 5";
+        $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
             $query->free_result();
