@@ -7,15 +7,13 @@ class Sensor extends RestController {
     
     function __construct() {
         parent::__construct();
-        $this->load->model('api/M_device');
-        $this->load->library('tupload');
-        $this->load->library('form_validation');
+        $this->load->model('api/M_device', 'Device');
     }
 
     public function index_get()
 	{
         $base_url = base_url();
-        $data = $this->M_device->get_all();
+        $data = $this->Device->get_all();
         
         // if data exist
         if($data){
@@ -38,7 +36,7 @@ class Sensor extends RestController {
     public function all_get()
     {
 
-        $data = $this->M_device->get_all_data();
+        $data = $this->Device->get_all_data();
 
         if ($data) {
             $this->response([

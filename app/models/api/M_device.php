@@ -1,6 +1,6 @@
 <?php
 
-class M_device extends MY_Model {
+class M_device extends CI_Model {
 
     public function get_all() {
         $this->db->select('*');
