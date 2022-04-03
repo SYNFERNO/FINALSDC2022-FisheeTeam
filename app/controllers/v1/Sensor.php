@@ -15,7 +15,7 @@ class Sensor extends RestController {
     public function index_get()
 	{
         $base_url = base_url();
-        $data = $this->M_deivce->get_all;
+        $data = $this->M_device->get_all();
         
         // if data exist
         if($data){
