@@ -461,7 +461,7 @@ $config['global_xss_filtering'] = FALSE;
 if (isset($_SERVER["REQUEST_URI"]) &&
    (isset($_SERVER['REQUEST_METHOD']) && ($_SERVER['REQUEST_METHOD'] == 'POST') ))
 {
-    if (stripos($_SERVER["REQUEST_URI"],'/api/') === false )  { // Verify if POST Request is not for API
+    if (stripos($_SERVER["REQUEST_URI"],'/v1/') === false )  { // Verify if POST Request is not for API
         $config['csrf_protection'] = TRUE;
     }
     else {

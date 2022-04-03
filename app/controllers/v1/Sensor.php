@@ -36,11 +36,11 @@ class Sensor extends RestController {
     {
         $data = [
             'device_id' => $this->post('device_id'),
-            'datetime' => DateTime()->format('Y-m-d H:i:s'),
+            'datetime' => date('Y-m-d H:i:s'),
             'celcius' => $this->post('celcius'),
             'mdb' => "1911130001",
             'mdb_name' => "admin",
-            'mdd' => DateTime()->format('Y-m-d H:i:s')
+            'mdd' => date('Y-m-d H:i:s')
         ];
 
         $insert = $this->Device->insert('sensor_suhu', $data);
