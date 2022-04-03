@@ -11,7 +11,7 @@ class Sensor extends PrivateBase {
     const PAGE_TITLE = 'Sensor';
     const PAGE_HEADER = 'Sensor';
     const PAGE_URL = 'administrator/sensor/';
-    protected $page_limit = 20;
+    protected $page_limit = 10;
 
     public function __construct() {
         parent::__construct();
