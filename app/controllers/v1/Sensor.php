@@ -48,7 +48,7 @@ class Sensor extends RestController {
         } else {
             $this->response([
                 'status' => false,
-                'message' => 'artikel not found'
+                'message' => $data
             ], RestController::HTTP_NOT_FOUND);
         }
     }
