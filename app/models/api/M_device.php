@@ -14,6 +14,10 @@ class M_device extends MY_Model {
         return array();
     }
 
+    public function get_all_data() {
+        return $this->db->get('data_feeder')->result_array();
+    }
+
     //insert
     public function insert($table, $params) {
         return $this->db->insert($table, $params);

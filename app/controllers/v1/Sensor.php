@@ -34,5 +34,23 @@ class Sensor extends RestController {
         }
         
     }
+
+    public function all_get()
+    {
+
+        $data = $this->M_device->get_all_data();
+
+        if ($data) {
+            $this->response([
+                'status' => true,
+                'data' => $data
+            ], RestController::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => false,
+                'message' => 'artikel not found'
+            ], RestController::HTTP_NOT_FOUND);
+        }
+    }
   
 }
