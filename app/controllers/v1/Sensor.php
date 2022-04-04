@@ -55,7 +55,7 @@ class Sensor extends RestController {
         $dataKetinggian = [
             'device_id' => $this->post('device_id'),
             'datetime' => date('Y-m-d H:i:s'),
-            'ketinggian' => $this->post('celcius'),
+            'ketinggian' => $this->post('ketinggian'),
             'mdb' => "1911130001",
             'mdb_name' => "admin",
             'mdd' => date('Y-m-d H:i:s')
