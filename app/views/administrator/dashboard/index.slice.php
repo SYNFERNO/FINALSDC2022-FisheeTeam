@@ -343,7 +343,6 @@ var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
 	type: 'line',
 	data: {
-		labels: ["Sun", "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"],
 		datasets: [{
 			label: "pH",
 			borderColor: "#1d7af3",
@@ -446,7 +445,7 @@ var y = date.getFullYear();
 var className = Array('fc-primary', 'fc-danger', 'fc-black', 'fc-success', 'fc-info', 'fc-warning', 'fc-danger-solid', 'fc-warning-solid', 'fc-success-solid', 'fc-black-solid', 'fc-success-solid', 'fc-primary-solid');
 
 $('#calendar').fullCalendar({
-    defaultDate: '2021-12-17',
+    defaultDate: '2022-4-5',
     editable: true,
     eventLimit: true, // allow "more" link when too many events
 });
