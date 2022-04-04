@@ -343,7 +343,7 @@ var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
 	type: 'line',
 	data: {
-		labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+		labels: ["Sun", "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"],
 		datasets: [{
 			label: "pH",
 			borderColor: "#1d7af3",
@@ -356,7 +356,7 @@ var myLineChart = new Chart(lineChart, {
 			backgroundColor: 'transparent',
 			fill: true,
 			borderWidth: 2,
-			data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 900]
+			data: [12, 12, 12, 12, 13, 13, 13, 12, 12, 12, 12, 12]
 		},
         {
 			label: "Suhu",
@@ -370,7 +370,7 @@ var myLineChart = new Chart(lineChart, {
 			backgroundColor: 'transparent',
 			fill: true,
 			borderWidth: 2,
-			data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 900]
+			data: [27, 28, 27, 27, 28, 28, 28, 27, 27, 26, 27, 27]
 		}]
 	},
 	options : {
