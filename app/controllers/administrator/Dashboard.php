@@ -25,7 +25,7 @@ class Dashboard extends PrivateBase {
         // get data
         $suhu      = $this->M_dashboard->get_latest_suhu();
         $ph        = $this->M_dashboard->get_latest_ph();
-        $ketinggian        = $this->M_dashboard->get_latest_ketinggian();
+        $ketinggian        = 12;
 
         $listSuhu = $this->M_dashboard->get_list_suhu();
         $listPH = $this->M_dashboard->get_list_ph();
