@@ -134,40 +134,26 @@ Dashboard
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>No</th>
                                 <th>Jam</th>
                                 <th>Cuaca</th>
-                                <th>Status</th>
-                                <th>Pakan</th>
+                                <th>Suhu</th>
+                                <th>PH</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>08:00 a.m</td>
-                                <td>30 C</td>
-                                <td>Cerah</td>
-                                <td>Dibawah standar</td>
-                                <td>Sudah</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">1</th>
-                                <td>08:00 a.m</td>
-                                <td>30 C</td>
-                                <td>Cerah</td>
-                                <td>Dibawah standar</td>
-                                <td>Sudah</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">1</th>
-                                <td>08:00 a.m</td>
-                                <td>30 C</td>
-                                <td>Cerah</td>
-                                <td>Dibawah standar</td>
-                                <td>Sudah</td>
-                            </tr>
-                        </tbody>
+                        
+						@php $no = 1; @endphp
+                        @foreach ($data_feeder as $item)
+                        <tr>
+                            <td>{{$no++}}</td>
+                            <td>{{date('H:i', strtotime($item['time_created']))}}</td>
+                            <td>{{$item['weather']}}</td>
+                            <td>{{$item['suhu']}} C</td>
+                            <td>{{$item['ph']}}</td>
+						</tr>
+                        @endforeach
+                    </tbody>
                     </table>
                 </div>
                 </div>
@@ -384,7 +370,7 @@ var myLineChart = new Chart(lineChart, {
 			backgroundColor: 'transparent',
 			fill: true,
 			borderWidth: 2,
-			data: [500, 490, 450, 520, 510, 413, 300, 404, 508, 600, 780, 980]
+			data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 900]
 		}]
 	},
 	options : {

@@ -26,8 +26,15 @@ class Dashboard extends PrivateBase {
         $suhu      = $this->M_dashboard->get_latest_suhu();
         $ph        = $this->M_dashboard->get_latest_ph();
         $ketinggian        = $this->M_dashboard->get_latest_ketinggian();
+
+        $listSuhu = $this->M_dashboard->get_list_suhu();
+        $listPH = $this->M_dashboard->get_list_ph();
+
+
+        $data_feeder = $this->M_dashboard->get_all_data_feeder();
+        
         $jam    = date('H:m');
         // render view
-        return view(self::PAGE_URL.'index',compact(['suhu','ph','ketinggian', 'jam']));
+        return view(self::PAGE_URL.'index',compact(['suhu','ph','ketinggian', 'jam', 'data_feeder', 'listSuhu', 'listPH']));
     }
 }

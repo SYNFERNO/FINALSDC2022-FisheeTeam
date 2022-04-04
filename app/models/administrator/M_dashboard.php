@@ -38,4 +38,42 @@ class M_dashboard extends MY_Model {
         return 0;
     }
 
+    //get all
+    public function get_all_data_feeder() {
+        $sql = "SELECT * FROM data_feeder
+        LIMIT 5";
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            $query->free_result();
+            return $result;
+        }
+        return array();
+    }
+
+    //get all
+    public function get_list_suhu() {
+        $sql = "SELECT celcius FROM sensor_suhu";
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            $query->free_result();
+            return $result;
+            
+        }
+        return array();
+    }
+
+    //get all
+    public function get_list_ph() {
+        $sql = "SELECT ph FROM sensor_ph";
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            $query->free_result();
+            return $result;
+        }
+        return array();
+    }
+
 }
