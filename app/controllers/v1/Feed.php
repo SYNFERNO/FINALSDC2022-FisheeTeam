@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 use chriskacerguis\RestServer\RestController;
 
-class Sensor extends RestController {
+class Feed extends RestController {
     
     function __construct() {
         parent::__construct();
@@ -17,8 +17,8 @@ class Sensor extends RestController {
             'suhu' => $this->post('suhu'),
             'ph' => $this->post('ph'),
             'time_created' => date('Y-m-d H:i:s'),
-            'debit_feed' => "1911130001",
-            'weather' => "admin",
+            'debit_feed' => "1",
+            'weather' => "cerah",
         ];
 
         $insert = $this->Device->insert('data_feeder', $data);
