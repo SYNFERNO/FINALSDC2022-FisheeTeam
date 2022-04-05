@@ -355,7 +355,7 @@ var myLineChart = new Chart(lineChart, {
 			backgroundColor: 'transparent',
 			fill: true,
 			borderWidth: 2,
-			data: [12, 7]
+			data: [12, 7, 7]
 		},
         {
 			label: "Suhu",
@@ -369,7 +369,7 @@ var myLineChart = new Chart(lineChart, {
 			backgroundColor: 'transparent',
 			fill: true,
 			borderWidth: 2,
-			data: [27, 28]
+			data: [27, 28, 27]
 		}]
 	},
 	options : {
