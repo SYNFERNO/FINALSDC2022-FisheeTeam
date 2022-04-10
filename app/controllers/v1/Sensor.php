@@ -52,18 +52,8 @@ class Sensor extends RestController {
             'mdd' => date('Y-m-d H:i:s')
         ];
 
-        $dataKetinggian = [
-            'device_id' => $this->post('device_id'),
-            'datetime' => date('Y-m-d H:i:s'),
-            'ketinggian' => $this->post('ketinggian'),
-            'mdb' => "1911130001",
-            'mdb_name' => "admin",
-            'mdd' => date('Y-m-d H:i:s')
-        ];
-
         $insert = $this->Device->insert('sensor_suhu', $dataSuhu);
         $insert = $this->Device->insert('sensor_ph', $datapH);
-        $insert = $this->Device->insert('sensor_ketinggian', $dataKetinggian);
 
         if($insert){
             $result = array(
