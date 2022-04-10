@@ -32,8 +32,7 @@ class Sensor extends RestController {
         
     }
 
-    public function index_post()
-    {
+    public function index_post(){
         $dataSuhu = [
             'device_id' => $this->post('device_id'),
             'datetime' => date('Y-m-d H:i:s'),
@@ -42,7 +41,6 @@ class Sensor extends RestController {
             'mdb_name' => "admin",
             'mdd' => date('Y-m-d H:i:s')
         ];
-
         $datapH = [
             'device_id' => $this->post('device_id'),
             'datetime' => date('Y-m-d H:i:s'),
@@ -51,10 +49,8 @@ class Sensor extends RestController {
             'mdb_name' => "admin",
             'mdd' => date('Y-m-d H:i:s')
         ];
-
         $insert = $this->Device->insert('sensor_suhu', $dataSuhu);
         $insert = $this->Device->insert('sensor_ph', $datapH);
-
         if($insert){
             $result = array(
                 'status' => true,
