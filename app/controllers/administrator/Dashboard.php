@@ -22,9 +22,6 @@ class Dashboard extends PrivateBase {
     public function index() {
         // set page rules
         $this->_set_page_rule('R');
-        $this->load->library('weather');
-
-        $weather = $this->weather->getWeather('Jakarta,ID');
         // get data
         $suhu      = $this->M_dashboard->get_latest_suhu();
         $ph        = $this->M_dashboard->get_latest_ph();
@@ -38,6 +35,6 @@ class Dashboard extends PrivateBase {
         
         $jam    = date('H:m');
         // render view
-        return view(self::PAGE_URL.'index',compact(['suhu','ph','ketinggian', 'jam', 'data_feeder', 'listSuhu', 'listPH', 'weather']));
+        return view(self::PAGE_URL.'index',compact(['suhu','ph','ketinggian', 'jam', 'data_feeder', 'listSuhu', 'listPH']));
     }
 }
