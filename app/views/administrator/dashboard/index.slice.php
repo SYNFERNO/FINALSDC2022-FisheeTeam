@@ -269,6 +269,8 @@ for (var i = 0; i < dataSuhu.length; i++) {
     suhu.push(dataSuhu[i].celcius);
 }
 
+console.log(ph);
+console.log(suhu);
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
