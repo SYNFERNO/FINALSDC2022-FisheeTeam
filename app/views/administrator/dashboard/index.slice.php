@@ -336,7 +336,7 @@ var myLineChart = new Chart(lineChart, {
 			backgroundColor: 'transparent',
 			fill: true,
 			borderWidth: 2,
-			data: [12, 7, 7]
+			data: <?php echo $listPH; ?>
 		},
         {
 			label: "Suhu",
@@ -350,7 +350,7 @@ var myLineChart = new Chart(lineChart, {
 			backgroundColor: 'transparent',
 			fill: true,
 			borderWidth: 2,
-			data: [27, 28, 27]
+			data: <?php echo $listSuhu; ?>
 		}]
 	},
 	options : {
