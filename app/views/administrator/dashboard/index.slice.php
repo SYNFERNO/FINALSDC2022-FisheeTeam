@@ -255,6 +255,7 @@ Dashboard
 
 <script>
 console.log(<?php echo json_encode($listSuhu); ?>);
+console.log(<?php echo json_encode($listPH); ?>);
 
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
