@@ -56,7 +56,7 @@ class M_dashboard extends MY_Model {
         $sql = "SELECT celcius FROM sensor_suhu";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
-            $result = $query->result_array();
+            $result = $query->row()->celcius;
             $query->free_result();
             return $result;
             
