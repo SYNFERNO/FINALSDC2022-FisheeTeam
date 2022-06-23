@@ -255,6 +255,7 @@ Dashboard
 
 <script>
 console.log($listPHP);
+console.log(<?php $listPHP; ?>);
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
