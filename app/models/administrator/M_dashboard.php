@@ -69,9 +69,9 @@ class M_dashboard extends MY_Model {
         $sql = "SELECT ph FROM sensor_ph";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
-            $result = $query->result_array();
+            $result = $query->row();
             $query->free_result();
-            return $result;
+            return $result->ph;
         }
         return array();
     }
