@@ -255,7 +255,7 @@ Dashboard
 
 <script>
 var books = <?php echo json_encode($listPH); ?>;
-console.log(books[0].ph);
+alert(books[0].Key);
 
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
