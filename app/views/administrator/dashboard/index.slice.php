@@ -255,7 +255,7 @@ Dashboard
 
 <script>
     var jarray = <?php echo json_encode($listPH); ?>;
-    console.log(jarray);
+    console.log(json_decode(jarray));
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
