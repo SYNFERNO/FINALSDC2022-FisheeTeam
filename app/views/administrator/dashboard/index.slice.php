@@ -10,7 +10,7 @@ Dashboard
     <div class="page-inner py-5">
         <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
             <div>
-                <h2 class="text-white pb-2 fw-bold">Dashboard {{json_encode($listSuhu)}}</h2>
+                <h2 class="text-white pb-2 fw-bold">Dashboard</h2>
             </div>
         </div>
     </div>
@@ -254,12 +254,9 @@ Dashboard
 <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
 
 <script>
-console.log(<?php echo json_encode($listPH); ?>);
-var i = [];
-for (var j = 0; j < <?php echo json_encode($listPH); ?>.length; j++) {
-    i.push(<?php echo json_encode($listPH); ?>[j]['ph']);
-}
-console.log(i);
+var temp = <?php echo json_encode($listPH); ?>;
+console.log(temp);
+
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
@@ -276,7 +273,7 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: [1, 2, 3]
+                data: 
             },
             {
                 label: "Suhu",
