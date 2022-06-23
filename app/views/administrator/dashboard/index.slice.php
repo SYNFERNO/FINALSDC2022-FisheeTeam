@@ -256,11 +256,19 @@ Dashboard
 <script>
 
 var dataPH = <?php echo json_encode($listPH); ?>;
+var dataSuhu = <?php echo json_encode($listSuhu); ?>;
 
 var ph = []
+var suhu = []
+
 for (var i = 0; i < dataPH.length; i++) {
     ph.push(dataPH[i].ph);
 }
+
+for (var i = 0; i < dataSuhu.length; i++) {
+    suhu.push(dataSuhu[i].celcius);
+}
+
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
@@ -291,7 +299,7 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: [1, 2, 3]
+                data: suhu
             }
         ]
     },
