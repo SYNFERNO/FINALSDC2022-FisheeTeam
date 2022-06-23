@@ -254,8 +254,14 @@ Dashboard
 <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
 
 <script>
-    var jarray = <?php echo json_decode(json_encode($listPH)); ?>;
+    var jarray = <?php echo json_encode($listPH); ?>;
+    var listPHArray = [];
+    for (var i = 0; i < jarray.length; i++) {
+        listPHArray.push(jarray[i]['ph']);
+    }
+}
     console.log(jarray);
+    console.log(listPHArray);
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
