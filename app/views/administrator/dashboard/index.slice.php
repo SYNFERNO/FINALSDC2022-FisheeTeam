@@ -254,7 +254,7 @@ Dashboard
 <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
 
 <script>
-    var jarray = <?php json_encode($sensor_suhu); ?>;
+    var jarray = <?php echo json_encode($sensor_suhu); ?>;
     var listPHArray = [];
     for (var i = 0; i < jarray.length; i++) {
         listPHArray.push(jarray[i]['celcius']);
