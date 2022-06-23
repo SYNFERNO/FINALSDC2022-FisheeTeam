@@ -301,37 +301,9 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: [8,14]
+                data: suhu
             }
         ]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        legend: {
-            position: 'bottom',
-            labels: {
-                padding: 10,
-                fontColor: '#1d7af3',
-            }
-        },
-        tooltips: {
-            bodySpacing: 4,
-            mode: "nearest",
-            intersect: 0,
-            position: "nearest",
-            xPadding: 10,
-            yPadding: 10,
-            caretPadding: 10
-        },
-        layout: {
-            padding: {
-                left: 15,
-                right: 15,
-                top: 15,
-                bottom: 15
-            }
-        }
     }
 });
 
@@ -384,7 +356,7 @@ var className = Array('fc-primary', 'fc-danger', 'fc-black', 'fc-success', 'fc-i
     'fc-warning-solid', 'fc-success-solid', 'fc-black-solid', 'fc-success-solid', 'fc-primary-solid');
 
 $('#calendar').fullCalendar({
-    defaultDate: '2022-6-23',
+    defaultDate: '2022-6-24',
     editable: true,
     eventLimit: true, // allow "more" link when too many events
 });
