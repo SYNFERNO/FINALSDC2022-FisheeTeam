@@ -255,6 +255,11 @@ Dashboard
 
 <script>
 console.log(<?php echo json_encode($listPH); ?>);
+var i = [];
+for (var j = 0; j < <?php echo json_encode($listPH); ?>.length; j++) {
+    i.push(<?php echo json_encode($listPH); ?>[j]['ph']);
+}
+console.log(i);
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
