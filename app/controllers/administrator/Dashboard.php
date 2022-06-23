@@ -30,6 +30,8 @@ class Dashboard extends PrivateBase {
         $listSuhu = $this->M_dashboard->get_list_suhu();
         $listPH = $this->M_dashboard->get_list_ph();
 
+        print_r($listSuhu);
+
 
         $data_feeder = $this->M_dashboard->get_all_data_feeder();
         
