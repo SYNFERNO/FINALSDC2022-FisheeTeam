@@ -254,8 +254,8 @@ Dashboard
 <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
 
 <script>
-var books = <?php echo json_encode($listPH); ?>;
-alert(books[0].Key);
+var books = <?php echo json_encode($listSuhu); ?>;
+alert(books[0].celcius);
 
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
