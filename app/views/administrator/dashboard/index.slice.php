@@ -254,7 +254,6 @@ Dashboard
 <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
 
 <script>
-console.log(<?= json_encode($listPHP); ?>);
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
@@ -271,7 +270,7 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: <?php echo json_encode($listPH); ?>
+                data: <?= json_encode($listPHP); ?>
             },
             {
                 label: "Suhu",
@@ -285,7 +284,7 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: <?php echo json_encode($listSuhu); ?>
+                data: <?= json_encode($listSuhu); ?>
             }
         ]
     },
