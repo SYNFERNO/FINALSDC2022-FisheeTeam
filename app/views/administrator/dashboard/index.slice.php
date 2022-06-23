@@ -270,7 +270,7 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: <?php echo json_encode($listPH["pH"]); ?>
+                data: <?php echo json_encode($listPH); ?>
             },
             {
                 label: "Suhu",
@@ -284,7 +284,7 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: <?php echo json_encode($listSuhu['Celcius']); ?>
+                data: <?php echo json_encode($listSuhu); ?>
             }
         ]
     },
