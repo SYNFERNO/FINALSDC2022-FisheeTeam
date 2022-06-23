@@ -255,7 +255,8 @@ Dashboard
 
 <script>
 console.log(<?php echo json_encode($listPH); ?>);
-
+var dataPH = <?php echo json_encode($listPH); ?>;
+console.log(dataPH);
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
