@@ -256,7 +256,12 @@ Dashboard
 <script>
 
 var dataPH = <?php echo json_encode($listPH); ?>;
-console.log(dataPH[0].ph);
+
+var ph = []
+for (var i = 0; i < dataPH.length; i++) {
+    ph.push(dataPH[i].ph);
+}
+console.log(ph);
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
