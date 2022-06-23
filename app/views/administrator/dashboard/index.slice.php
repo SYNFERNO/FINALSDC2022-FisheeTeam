@@ -255,13 +255,7 @@ Dashboard
 
 <script>
     var jarray = <?php echo json_encode($sensor_suhu); ?>;
-    var listPHArray = [];
-    for (var i = 0; i < jarray.length; i++) {
-        listPHArray.push(jarray[i]['celcius']);
-    }
-
-    console.log(jarray);
-    console.log(listPHArray);
+    console.log(jarray[0]['suhu']);
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
@@ -278,7 +272,7 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: listPHArray
+                data: jarray[0]['suhu']
             },
             {
                 label: "Suhu",
@@ -292,7 +286,7 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: listPHArray
+                data: jarray[0]['suhu']
             }
         ]
     },
