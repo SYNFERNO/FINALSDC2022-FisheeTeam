@@ -254,7 +254,7 @@ Dashboard
 <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
 
 <script>
-console.log(<?php echo $listPHP; ?>);
+console.log(<?= json_encode($listPHP); ?>);
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
