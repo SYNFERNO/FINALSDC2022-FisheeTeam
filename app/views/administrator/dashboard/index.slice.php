@@ -321,6 +321,8 @@ Dashboard
 <script>
 var lineChart = document.getElementById('lineChart').getContext('2d');
 
+console.log(<?php echo json_encode($listPHP); ?>);
+
 var myLineChart = new Chart(lineChart, {
 	type: 'line',
 	data: {
