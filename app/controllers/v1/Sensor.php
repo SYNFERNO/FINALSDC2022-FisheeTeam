@@ -10,9 +10,31 @@ class Sensor extends RestController {
         $this->load->model('api/M_device', 'Device');
     }
 
-    public function index_get()
+    public function suhu_get()
 	{
-        $data = $this->Device->get_all();
+        $data = $this->Device->get_all_suhu();
+        
+        // if data exist
+        if($data){
+            $result = array(
+                'status' => true,
+                'message' => 'Sukses Mengambil Data!',
+                'data' => $data
+                );
+            $this->response($result, 200); 
+        } else {
+            $result = array(
+				'status' => false,
+				'message' => 'Gagal Mengambil Data, Coba Lagi Nanti!'
+			);
+			$this->response($result, 200);
+        }
+        
+    }
+
+    public function ph_get()
+	{
+        $data = $this->Device->get_all_ph();
         
         // if data exist
         if($data){

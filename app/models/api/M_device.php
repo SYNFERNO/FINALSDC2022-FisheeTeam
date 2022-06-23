@@ -2,9 +2,21 @@
 
 class M_device extends MY_Model {
 
-    public function get_all() {
+    public function get_all_suhu() {
         $sql = "SELECT * FROM sensor_suhu
-        LIMIT 5";
+        LIMIT 15";
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            $query->free_result();
+            return $result;
+        }
+        return array();
+    }
+
+    public function get_all_ph() {
+        $sql = "SELECT * FROM sensor_ph
+        LIMIT 15";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
