@@ -254,8 +254,6 @@ Dashboard
 <script src='http://fullcalendar.io/js/fullcalendar-2.1.1/fullcalendar.min.js'></script>
 
 <script>
-    var jarray = <?php echo json_encode($sensor_suhu); ?>;
-    console.log(jarray[0]['suhu']);
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
@@ -272,7 +270,7 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: jarray[0]['suhu']
+                data: [1,2,3]
             },
             {
                 label: "Suhu",
@@ -286,7 +284,7 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: jarray[0]['suhu']
+                data: [1,2,3]
             }
         ]
     },
