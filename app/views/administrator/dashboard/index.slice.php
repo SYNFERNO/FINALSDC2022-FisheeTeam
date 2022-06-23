@@ -259,7 +259,7 @@ Dashboard
     for (var i = 0; i < jarray.length; i++) {
         listPHArray.push(jarray[i]['celcius']);
     }
-}
+
     console.log(jarray);
     console.log(listPHArray);
 var lineChart = document.getElementById('lineChart').getContext('2d');
