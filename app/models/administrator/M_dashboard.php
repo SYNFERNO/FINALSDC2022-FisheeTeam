@@ -71,7 +71,7 @@ class M_dashboard extends MY_Model {
         if ($query->num_rows() > 0) {
             $result = $query->row_array();
             $query->free_result();
-            return $result->ph;
+            return $result;
         }
         return array();
     }
