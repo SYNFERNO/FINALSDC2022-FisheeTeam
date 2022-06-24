@@ -287,7 +287,11 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: ph
+                data: [
+                        @foreach($listPH as $item)
+                        <?php echo $item['ph']; ?>,
+                        @endforeach
+                    ]
             },
             {
                 label: "Suhu",
@@ -301,7 +305,11 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: suhu
+                data: [
+                        @foreach($listSuhu as $item)
+                        <?php echo $item['celcius']; ?>,
+                        @endforeach
+                    ]
             }
         ]
     }
