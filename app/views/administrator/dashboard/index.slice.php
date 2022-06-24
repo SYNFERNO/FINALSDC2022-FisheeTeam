@@ -110,7 +110,7 @@ Dashboard
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">Riwayat Pemberian Pakan</div>
-                    <div class="card-category">March 25 - April 02</div>
+                    <div class="card-category">Mei 25 - Juni 02</div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -301,7 +301,7 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: [1,2,3,2,3]
+                data: suhu
             }
         ]
     }
