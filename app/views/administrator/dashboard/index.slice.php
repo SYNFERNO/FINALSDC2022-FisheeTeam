@@ -270,7 +270,7 @@ for (var i = 0; i < dataSuhu.length; i++) {
 }
 
 console.log(ph);
-console.log(suhu.replace(" ", "").split(','));
+console.log(suhu);
 var lineChart = document.getElementById('lineChart').getContext('2d');
 var myLineChart = new Chart(lineChart, {
     type: 'line',
