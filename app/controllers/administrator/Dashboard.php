@@ -34,8 +34,6 @@ class Dashboard extends PrivateBase {
         $data_feeder = $this->M_dashboard->get_all_data_feeder();
         
         $jam    = date('H:i');
-        print_r($jam);
-        // render view
         return view(self::PAGE_URL.'index',compact(['suhu','ph','ketinggian', 'jam', 'data_feeder', 'listSuhu', 'listPH']));
     }
 }
