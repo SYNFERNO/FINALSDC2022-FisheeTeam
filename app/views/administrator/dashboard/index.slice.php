@@ -262,11 +262,11 @@ var ph = []
 var suhu = []
 
 for (var i = 0; i < dataPH.length; i++) {
-    ph.push(dataPH[i].ph);
+    ph.push(parseInt(dataPH[i].ph));
 }
 
 for (var i = 0; i < dataSuhu.length; i++) {
-    suhu.push(dataSuhu[i].celcius);
+    suhu.push(parseInt(dataSuhu[i].celcius));
 }
 
 console.log(ph);
