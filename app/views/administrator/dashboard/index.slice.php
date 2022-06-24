@@ -301,7 +301,7 @@ var myLineChart = new Chart(lineChart, {
                 backgroundColor: 'transparent',
                 fill: true,
                 borderWidth: 2,
-                data: suhu
+                data: [1,2,3,2,3]
             }
         ]
     }
